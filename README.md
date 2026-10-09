@@ -104,10 +104,9 @@ emitter('foo', 'baz')
 
 ```
 
-Emitting an event without its own subscribers still notifies wildcard subscribers.
-With no subscribers at all, emitting the event is a no-op. Specific subscribers
-run before wildcard subscribers; emitting `'*'` itself notifies the wildcard list
-once.
+An undefined event listener list is skipped. Wildcard subscribers are still
+notified after any specific subscribers; emitting `'*'` itself notifies the
+wildcard list once.
 
 ## Contributing
 
