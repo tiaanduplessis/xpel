@@ -25,7 +25,9 @@
     "format": "prettier --print-width 100 --semi false --single-quote --write 'src/**/*.js'",
     "precommit": "npm test",
     "prepublish": "npm run build",
-    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push --tags && npm publish"
+    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push --tags && npm publish",
+    "test:behavior": "node test/behavior.test.js",
+    "build:verified": "node scripts/build-verified.mjs"
   },
   "author": "tiaanduplessis <tiaanduplessis@hotmail.com>",
   "babel": {

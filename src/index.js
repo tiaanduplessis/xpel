@@ -6,7 +6,10 @@ export default function (subs = {}) {
       return name => name && (subs[name] = [])
     }
 
-    name !== '*' && subs[name].map(f => f(...handler))
+    if (name !== '*') {
+      const listeners = subs[name]
+      if (listeners !== undefined) listeners.map(f => f(...handler))
+    }
     subs['*'].map(f => f(...handler))
     return this
   }
